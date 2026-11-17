@@ -1,0 +1,23 @@
+ReadHalo eSpeak component, release 1.52.0-r1
+
+The phonemizer module and ReadHalo bridge are distributed under GPL-3.0-or-later.
+See LICENSE for the GNU General Public License, version 3.
+
+vendor/ contains eSpeak NG 1.52.0 from espeak-ng/espeak-ng commit
+4870adfa25b1a32b4361592f1be8a40337c58d6c. See vendor/README.md and
+vendor/COPYING* for upstream copyright and license notices. The repository
+preserves the notices and licenses of the third-party materials in that source
+tree. The Wasm uses the eSpeak NG library, its Unicode support, the compiled
+English dictionary and phoneme tables, and its en-US and en-GB voice definitions.
+
+src/bridge.c is the ReadHalo parity prototype bridge. src/module.c adapts
+punctuation preservation and output processing from Phonemizer, copyright
+2015–2021 Mathieu Bernard, GPL-3.0-or-later. Reference distribution:
+phonemizer-fork 3.3.2, https://pypi.org/project/phonemizer-fork/3.3.2/.
+Reference implementation files and SHA-256:
+  e8f87c8f4dcac4e24cf2243ebd51698ea53d4c2ac2ca2a060324e6f6f84ec374  phonemizer/punctuation.py
+  19ce919f95e60b8fa8e6b67bf4b27d375449e381be51406b9ffd7c04970d0f4d  phonemizer/backend/espeak/espeak.py
+
+The Wasm includes portions of the Emscripten 3.1.64 runtime and its C library.
+See https://github.com/emscripten-core/emscripten/blob/3.1.64/LICENSE and
+https://github.com/emscripten-core/emscripten/blob/3.1.64/system/lib/libc/musl/COPYRIGHT.
