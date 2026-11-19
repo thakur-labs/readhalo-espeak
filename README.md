@@ -4,7 +4,10 @@ English phonemization from eSpeak NG 1.52.0. The release is one standalone
 WebAssembly binary with embedded US and GB voice data. It has zero imports
 and runs inside its own linear memory.
 
-## Build 1.52.0-r1
+## Build the engine
+
+Release `1.52.0-r2` updates the notice and reuses the exact Wasm from
+`1.52.0-r1`. The Wasm still reports `1.52.0-r1` through the ABI.
 
 Use Bash, Git, Python 3 with venv, and a native C toolchain. The source under
 `vendor/` is pinned to commit `4870adfa25b1a32b4361592f1be8a40337c58d6c`.
@@ -65,3 +68,17 @@ reference in singleton calls and reordered batches of 1, 8, 32 and 128.
 It instantiates the Wasm with zero imports.
 
 See [NOTICE](NOTICE) and [LICENSE](LICENSE) for attribution and licensing.
+
+To prepare the downloadable NOTICE, append the immutable source commit to the
+notice from the release tag after the tag has been created:
+
+```sh
+tag=1.52.0-r2
+commit=$(git rev-parse "${tag}^{commit}")
+mkdir -p dist
+{
+  git show "${commit}:NOTICE"
+  printf '\nSource commit: %s\n' "$commit"
+  printf 'Source tree: https://github.com/thakur-labs/readhalo-espeak/tree/%s\n' "$commit"
+} > dist/NOTICE
+```

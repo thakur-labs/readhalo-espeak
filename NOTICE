@@ -1,7 +1,13 @@
-ReadHalo eSpeak component, release 1.52.0-r1
+ReadHalo eSpeak component, release 1.52.0-r2
 
 The phonemizer module and ReadHalo bridge are distributed under GPL-3.0-or-later.
 See LICENSE for the GNU General Public License, version 3.
+
+The complete Corresponding Source, including the build scripts and licence
+texts, is available to download at no charge under GPLv3 section 6(d).
+Repository: https://github.com/thakur-labs/readhalo-espeak
+Release tag: 1.52.0-r2
+Source archive: https://github.com/thakur-labs/readhalo-espeak/archive/refs/tags/1.52.0-r2.tar.gz
 
 vendor/ contains eSpeak NG 1.52.0 from espeak-ng/espeak-ng commit
 4870adfa25b1a32b4361592f1be8a40337c58d6c. See vendor/README.md and
